@@ -138,8 +138,12 @@ ul.projects, ul.education, ul.certs {
   padding-left: 0;
 }
 
-ul.projects li, ul.education li, ul.certs li {
+ul.education li, ul.certs li {
   padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+ul.projects li {
   border-bottom: 1px solid var(--border);
 }
 
@@ -147,13 +151,38 @@ ul.projects li:last-child, ul.education li:last-child, ul.certs li:last-child {
   border-bottom: none;
 }
 
-ul.projects a {
+a.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
   color: var(--text);
-  font-weight: 600;
   text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-ul.projects a:hover { color: var(--accent); }
+a.project-link strong { font-weight: 600; }
+
+a.project-link .arrow {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+a.project-link:hover,
+a.project-link:focus-visible {
+  background: var(--card-bg);
+  color: var(--accent);
+}
+
+a.project-link:hover .arrow,
+a.project-link:focus-visible .arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
 
 .skills-grid {
   display: grid;
